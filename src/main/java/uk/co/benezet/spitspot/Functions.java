@@ -10,25 +10,18 @@ import java.util.stream.Collectors;
 public class Functions {
 
     public static Function<String, List<String>> entries = filename -> {
-        List<String> collect;
         try {
-            collect = new BufferedReader(new InputStreamReader(new FileInputStream(filename) {
-            }))
-                    .lines().collect(Collectors.toList());
+            return new BufferedReader(new InputStreamReader(new FileInputStream(filename))).lines().collect(Collectors.toList());
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e.getMessage());
         }
-
-        return collect;
     };
-
 
     public static Function<List<String>, List<String>> sorted = unsorted -> unsorted.stream().sorted().collect(Collectors.toList());
 
     public static List<String> subset(String from, String to, List<String> entries) {
         return entries.subList(entries.indexOf(from), entries.indexOf(to) + 1);
     }
-
 
     public static Function<Tuple, Tuple> filter = t -> {
 
@@ -49,7 +42,6 @@ public class Functions {
         }
 
         return new Tuple(t.filtered, t.theRest.subList(1, t.theRest.size()));
-
     };
 
     public static String firstOf(List<String> things) {
