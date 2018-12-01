@@ -17,8 +17,6 @@ public class FunctionsTest {
         assertThat(Functions.subset("B", "D", ImmutableList.of("A","B","C","D"))).isEqualTo(ImmutableList.of("B","C","D"));
         assertThat(Functions.subset("A", "C", ImmutableList.of("A","B","C","D"))).isEqualTo(ImmutableList.of("A","B","C"));
         assertThat(Functions.subset("B", "C", ImmutableList.of("A","B","C","D"))).isEqualTo(ImmutableList.of("B","C"));
-
-
     }
 
     @Test
