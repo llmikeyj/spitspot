@@ -30,7 +30,7 @@ public class SpitSpotApp {
         write(Functions.squash(startWord, endWord, entries), resultFile);
     }
 
-    private static void write(List<String> squash, String resultFile) throws IOException {
-        FileUtils.write(new File(resultFile), squash.stream().collect(Collectors.joining("\n")));
+    private static void write(List<String> squashed, String resultFile) throws IOException {
+        FileUtils.write(new File(resultFile), squashed.stream().collect(Collectors.joining("\n")));
     }
 }
