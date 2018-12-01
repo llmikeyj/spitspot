@@ -31,10 +31,6 @@ public class Functions {
 
         int differences = characterDifferencesOf(lastOf(t.filtered), firstOf(t.theRest));
 
-        if (differences == 0) {
-            return new Tuple(t.filtered, t.theRest.subList(1, t.theRest.size()));
-        }
-
         if (differences == 1) {
             return new Tuple(
                     ImmutableList.<String>builder().addAll(t.filtered).add(t.theRest.get(0)).build(),
